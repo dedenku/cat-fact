@@ -22,7 +22,7 @@ app.get("/", async (req, res) => {
         // factText.push(result);
         // factPic.push(resultCat);
         // console.log(result);
-        console.log(resultCat);
+        // console.log(resultCat);
         res.render("index.ejs", {
             data: factText,
             catData: factPic,
@@ -55,6 +55,13 @@ app.post("/generate", async (req, res) => {
         });
     }
     
+});
+
+app.post("/clear-all", (req, res) => {
+    factText = [];
+    factPic = [];
+    res.redirect("/");
+
 });
 
 app.listen(port, () => {

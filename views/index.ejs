@@ -12,31 +12,35 @@
 
     <div class="grid-display">
         <form action="/generate" method="POST" class="buttons">
-            <button> GENERATE CAT FACT</button>
+            <button type="submit" class="generate-button"> GENERATE A CAT FACT</button>
         </form>
 
         <div class="container">
-            <% for(let i=catData.length - 1; i>= 0; i--) { %>
-                <div class="card">
-                    <% if(locals.catData[i]) { %>
+            <!-- FACT CARD -->
+            <% if(locals.catData.length !== 0) { %>
+                <% for(let i=catData.length - 1; i>= 0; i--) { %>
+                    <div class="card">
                         <img src="https://cataas.com/cat/<%= catData[i]._id %>" alt="image of cat(s)">
+                        <div class="container-card">
+                            <p>
+                                <%= data[i].data %>
+                            </p>
+                        </div>
+                    </div>
+                    <% } %>
                         <% } else { %>
-                            <img src="https://cataas.com/cat/NMkj9LzSvqoexlHi" alt="cat(s)">
-                            <% } %>
+                            <div class="card">
+                                <img src="https://cataas.com/cat/NMkj9LzSvqoexlHi" alt="cat(s)">
                                 <div class="container-card">
-
-                                    <% if(locals.data[i]) { %>
-                                        <p>
-                                            <%= data[i].data %>
-                                        </p>
-                                        <% } else { %>
-                                            <p>Refresh the browser for new cat fact!</p>
-                                            <% } %>
+                                    <p>😺<br>Welcome to cat fact generator!<br>Click the button above to generate a cat fact, meow! </p>
                                 </div>
-                </div>
-                <!-- <p>Refresh for a new fact</p> -->
-                <% } %>
+                            </div>
+                            <% } %>
+                                <!-- FACT CARD END -->
         </div>
+        <form action="/clear-all" method="POST" class="buttons">
+            <button class="clear-button"> CLEAR ALL CAT FACTS</button>
+        </form>
     </div>
 </body>
 
