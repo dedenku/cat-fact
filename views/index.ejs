@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random Cat Fact</title>
+</head>
+
+<body>
+
+    <div class="grid-display">
+        <form action="/generate" method="POST" class="buttons">
+            <button> GENERATE CAT FACT</button>
+        </form>
+
+        <div class="container">
+            <% for(let i=catData.length - 1; i>= 0; i--) { %>
+                <div class="card">
+                    <% if(locals.catData[i]) { %>
+                        <img src="https://cataas.com/cat/<%= catData[i]._id %>" alt="image of cat(s)">
+                        <% } else { %>
+                            <img src="https://cataas.com/cat/NMkj9LzSvqoexlHi" alt="cat(s)">
+                            <% } %>
+                                <div class="container-card">
+
+                                    <% if(locals.data[i]) { %>
+                                        <p>
+                                            <%= data[i].data %>
+                                        </p>
+                                        <% } else { %>
+                                            <p>Refresh the browser for new cat fact!</p>
+                                            <% } %>
+                                </div>
+                </div>
+                <!-- <p>Refresh for a new fact</p> -->
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
