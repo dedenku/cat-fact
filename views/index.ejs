@@ -17,7 +17,7 @@
 
         <div class="container">
             <!-- FACT CARD -->
-            <% if(locals.catData.length !== 0) { %>
+            <% if(locals.catData.length !==0) { %>
                 <% for(let i=catData.length - 1; i>= 0; i--) { %>
                     <div class="card">
                         <img src="https://cataas.com/cat/<%= catData[i]._id %>" alt="image of cat(s)">
@@ -32,7 +32,8 @@
                             <div class="card">
                                 <img src="https://cataas.com/cat/NMkj9LzSvqoexlHi" alt="cat(s)">
                                 <div class="container-card">
-                                    <p>😺<br>Welcome to cat fact generator!<br>Click the button above to generate a cat fact, meow! </p>
+                                    <p>😺<br>Welcome to cat fact generator!<br>Click the button above to generate a cat
+                                        fact, meow! </p>
                                 </div>
                             </div>
                             <% } %>
